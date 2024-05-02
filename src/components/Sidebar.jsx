@@ -20,15 +20,15 @@ const Sidebar = () => (
       <ul className=" bg-gray-100 rounded-xl m-2 h-screen pt-2 text-white">
         <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded">
           <BiMapPin className="mr-1" size={20} />
-          <Link to="home/map-location">Map Location</Link>
+          <Link to="/map-location">Map Location</Link>
         </li>
         <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded">
           <RiHistoryFill className="mr-1" size={20} />
-          <Link to="home/location-history">Location History</Link>
+          <Link to="/location-history">Location History</Link>
         </li>
         <li className="flex items-center mb-3 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded">
           <CgProfile className="mr-1" size={20} />
-          <Link to="home/profile">Profile</Link>
+          <Link to="/profile">Profile</Link>
         </li>
       </ul>
     </nav>

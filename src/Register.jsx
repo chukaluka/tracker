@@ -37,7 +37,8 @@ const Register = () => {
           }
         }
       )
-        alert('Check your email for verification link')
+      if (error) throw error
+      alert('Check your email for verification link')
 
     } catch (error) {
       alert(error)

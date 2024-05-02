@@ -7,7 +7,7 @@ import { Icon } from "leaflet";
 import { TbWorld } from "react-icons/tb";
 import { VscSignOut } from "react-icons/vsc";
 
-const MapLocation = () => {
+const MapLocation = ( {token} ) => {
     const location = useGeolocation();
     const mapRef = useRef(null); // Define a reference for the MapContainer
 
@@ -26,6 +26,7 @@ const MapLocation = () => {
   return (
     <div className="container mx-auto my-3 p-1 shadow-lg rounded-lg">
     <div className="flex justify-between">
+    <h1>Welcome back, {token.user.user_metadata.first_name}</h1>
       <button
         onClick={showMyLocation}
         className="flex bg-gradient-to-r from-red-400 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white font-bold h-8 rounded-full justify-center items-center p-5 m-3 ml-12"

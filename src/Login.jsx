@@ -1,8 +1,45 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import location2 from "../images/location2.jpg";
+import { supabase } from "./config/supabaseClient"
 
+const Login = ( {setToken} ) => {
+  let navigate = useNavigate()
 
-const Login = () => {
+  const [formData, setFormData] = useState({
+     email:'', password:''
+  })
+
+  console.log(formData)
+
+  const handleChange = (event) => {
+    setFormData((prevFormData) => {
+      return{
+        ...prevFormData,
+        [event.target.name]:event.target.value
+      }
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: formData.email,
+    password: formData.password,
+  })
+  if (error) throw error
+  console.log(data)
+  setToken(data)
+  navigate('/map-location')
+  
+
+    } catch (error) {
+      alert(error)
+    }
+  }
 
   return (
     <div className="min-h-screen py-40 flex items-center justify-center bg-gradient-to-r from-blue-900">
@@ -12,12 +49,13 @@ const Login = () => {
         <div className="w-full lg:w-1/2 py-16 px-12">
           <h2 className="text-3xl mb-4">Login</h2>
           <p className="mb-4 text-sm">Tracking made easy!</p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mt-5 text-sm-bold">
               <input
                 type="email"
                 name="email"
                 placeholder="Email Address"
+                onChange={handleChange}
                 className="border border-gray-400 p-2 w-full rounded-md"
                 required
               />
@@ -27,6 +65,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                onChange={handleChange}
                 className="border border-gray-400 p-2 w-full rounded-md"
                 required
               />

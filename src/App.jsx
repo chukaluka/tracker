@@ -5,13 +5,27 @@ import Sidebar from "./components/Sidebar";
 import Profile from "./components/Profile";
 import LocationHistory from "./components/LocationHistory";
 import MapLocation from "./components/MapLocation";
+import { useEffect, useState } from "react";
 
 
 export default function App() {
+  const [token, setToken] =  useState(false)
+
+  if(token){
+    sessionStorage.setItem('token',JSON.stringify(token))
+  }
+  useEffect(() => {
+    if(sessionStorage.getItem('token')){
+      let data = JSON.parse(sessionStorage.getItem('token'))
+      setToken(data)
+    }
+  }, [])
+  
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login setToken={setToken}/>} />
         <Route path="/registration" element={<Register />} />
         <Route
           element={
@@ -21,9 +35,9 @@ export default function App() {
             </div>
           }
         >
-          <Route path="home/profile" element={<Profile />} />
-          <Route path="home/location-history" element={<LocationHistory />} />
-          <Route path="home/map-location" element={<MapLocation />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/location-history" element={<LocationHistory />} />
+          {token ? <Route path="/map-location" element={<MapLocation token={token} />} /> : ""}
         </Route>
       </Routes>
     </BrowserRouter>
