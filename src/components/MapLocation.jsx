@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import useGeolocation from "./useGeolocation";
@@ -8,6 +8,9 @@ import { TbWorld } from "react-icons/tb";
 import { VscSignOut } from "react-icons/vsc";
 
 const MapLocation = ( {token} ) => {
+
+    let navigate = useNavigate()
+
     const location = useGeolocation();
     const mapRef = useRef(null); // Define a reference for the MapContainer
 
@@ -23,23 +26,27 @@ const MapLocation = ( {token} ) => {
       mapRef.current.flyTo([lat, lng], 13, { animate: true });
     }}
 
+    const handleSignout = () => {
+      sessionStorage.removeItem('token')
+      navigate('/')
+    }
+
   return (
     <div className="container mx-auto my-3 p-1 shadow-lg rounded-lg">
     <div className="flex justify-between">
-    <h1>Welcome back, {token.user.user_metadata.first_name}</h1>
       <button
         onClick={showMyLocation}
         className="flex bg-gradient-to-r from-red-400 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white font-bold h-8 rounded-full justify-center items-center p-5 m-3 ml-12"
       >
         Locate Me <TbWorld className="ml-1 mt-[-5px]" />
       </button>
-      <Link
-        to="/"
-        className="flex items-center hover:bg-white hover:text-purple-800 p-1 m-2 font-bold"
+      <button
+        onClick={handleSignout}
+        className="flex items-center hover:bg-white hover:text-red-600 p-1 m-2 font-bold"
       >
         <VscSignOut className="mr-1" size={20} />
         Sign Out
-      </Link>
+      </button>
     </div>
     <MapContainer
       center={[51.505, -0.09]}
