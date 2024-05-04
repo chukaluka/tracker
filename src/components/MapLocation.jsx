@@ -6,6 +6,7 @@ import useGeolocation from "./useGeolocation";
 import { Icon } from "leaflet";
 import { TbWorld } from "react-icons/tb";
 import { VscSignOut } from "react-icons/vsc";
+import { supabase } from "../config/supabaseClient"
 
 const MapLocation = ( {token} ) => {
 
@@ -24,6 +25,19 @@ const MapLocation = ( {token} ) => {
     if (location.loaded && !location.error) {
       const { lat, lng } = location.coordinates;
       mapRef.current.flyTo([lat, lng], 13, { animate: true });
+
+      try {
+        let { data, error } = await supabase
+        .from('location-history')
+        .select('lat, lng')
+
+        if (error) throw error
+        console.log(lat, lng)
+        
+        
+      } catch (error) {
+        console.log(error)
+      }
     }}
 
     //Signout function
