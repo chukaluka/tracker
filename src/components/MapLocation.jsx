@@ -26,6 +26,7 @@ const MapLocation = ( {token} ) => {
       mapRef.current.flyTo([lat, lng], 13, { animate: true });
     }}
 
+    //Signout function
     const handleSignout = () => {
       sessionStorage.removeItem('token')
       navigate('/')
@@ -36,13 +37,13 @@ const MapLocation = ( {token} ) => {
     <div className="flex justify-between">
       <button
         onClick={showMyLocation}
-        className="flex bg-gradient-to-r from-red-400 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white font-bold h-8 rounded-full justify-center items-center p-5 m-3 ml-12"
+        className="flex shadow-sm shadow-red-700 bg-gradient-to-r text-black hover:from-red-600 hover:to-purple-700 hover:text-white font-bold h-8 rounded-full justify-center items-center transition duration-300 p-5 m-3 ml-12 border-2 border-gray-300"
       >
         Locate Me <TbWorld className="ml-1 mt-[-5px]" />
       </button>
       <button
         onClick={handleSignout}
-        className="flex items-center hover:bg-white hover:text-red-600 p-1 m-2 font-bold"
+        className="flex shadow-sm shadow-red-700 items-center justify-center hover:text-white mr-11 font-bold transition duration-300 border-2 border-gray-300 hover:bg-red-600 h-8 rounded-full p-5 m-3"
       >
         <VscSignOut className="mr-1" size={20} />
         Sign Out
