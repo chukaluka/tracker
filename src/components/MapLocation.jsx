@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -26,17 +26,18 @@ const MapLocation = ( {token} ) => {
       const { lat, lng } = location.coordinates;
       mapRef.current.flyTo([lat, lng], 13, { animate: true });
 
-      try {
-        let { data, error } = await supabase
-        .from('location-history')
-        .select('lat, lng')
 
+      try {
+       // Insert the location data into the 'location-history' table
+        const { data, error } = await supabase
+        .from('location-history')
+        .insert([{ lat, lng }]);
+        
         if (error) throw error
         console.log(lat, lng)
         
-        
       } catch (error) {
-        console.log(error)
+        console.error('Error inserting location data:', error.message);
       }
     }}
 
@@ -85,5 +86,5 @@ const MapLocation = ( {token} ) => {
   )
 }
 
-
 export default MapLocation
+
