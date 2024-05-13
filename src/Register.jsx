@@ -111,7 +111,7 @@ const Register = () => {
              <div className="mt-5 text-sm">
                <button
                  type="submit"
-                 className="w-full bg-blue-500 py-3 text-center text-white rounded-md hover:bg-blue-700 transition duration-300"
+                 className="w-full bg-blue-500 py-3 text-center text-white rounded-md hover:bg-black transition duration-300"
                >
                  Register Now
                </button>
@@ -120,7 +120,7 @@ const Register = () => {
              <div className="mt-5 text-center text-sm-bold">
                <span>
                  Already have an account?
-                 <Link to="/" className="text-blue-900 font-semibold ml-1 hover:text-blue-700">
+                 <Link to="/" className="text-blue-900 font-semibold ml-1 hover:text-black">
                    Login now
                  </Link>
                </span>

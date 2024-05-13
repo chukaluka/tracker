@@ -75,7 +75,7 @@ const Login = ( {setToken} ) => {
             <div className="mt-5">
               <button
                 type="submit"
-                className="w-full bg-blue-500 py-3 text-center text-white font-semibold rounded-md text-sm lg:text-sm hover:bg-blue-700 transition duration-300"
+                className="w-full bg-blue-500 py-3 text-center text-white font-semibold rounded-md text-sm lg:text-sm hover:bg-black transition duration-300"
               >
                 Login
               </button>
@@ -86,7 +86,7 @@ const Login = ( {setToken} ) => {
                 Don't have an account?
                 <Link
                   to="/registration"
-                  className="text-blue-900 font-semibold ml-1 hover:text-blue-700"
+                  className="text-blue-900 font-semibold ml-1 hover:text-black"
                 >
                   Register now
                 </Link>
