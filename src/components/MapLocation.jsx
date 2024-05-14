@@ -2,11 +2,11 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import useGeolocation from "./components/useGeolocation";
+import useGeolocation from "./useGeolocation";
 import { Icon } from "leaflet";
 import { TbWorld } from "react-icons/tb";
 import { VscSignOut } from "react-icons/vsc";
-import { supabase } from "./config/supabaseClient"
+import { supabase } from "../config/supabaseClient"
 
 const MapLocation = ( {token} ) => {
 

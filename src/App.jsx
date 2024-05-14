@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
-import Sidebar from "./Sidebar";
-import Profile from "./Profile";
-import LocationHistory from "./LocationHistory";
-import MapLocation from "./MapLocation";
+import Sidebar from "./components/Sidebar";
+import Profile from "./components/Profile";
+import LocationHistory from "./components/LocationHistory";
+import MapLocation from "./components/MapLocation";
 import { useEffect, useState } from "react";
 
 
