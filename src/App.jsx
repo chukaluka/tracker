@@ -33,12 +33,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<div>..loading...</div>}>
           <Login setToken={setToken}/>
         </Suspense>} />
 
         <Route path="/registration" element={
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<div>..loading...</div>}>
           <Register />
         </Suspense>} />
 
@@ -51,17 +51,17 @@ export default function App() {
           }
         >
           <Route path="/profile" element={
-          <Suspense fallback={<div>loading...</div>}>
+          <Suspense fallback={<div>..loading...</div>}>
             <Profile />
           </Suspense>} />
 
           <Route path="/location-history" element={
-          <Suspense fallback={<div>loading...</div>}>
+          <Suspense fallback={<div>..loading...</div>}>
             <LocationHistory />
           </Suspense>} />
           
           {token ? <Route path="/map-location" element={
-          <Suspense fallback={<div>loading...</div>}>
+          <Suspense fallback={<div>..loading...</div>}>
             <MapLocation token={token} />
           </Suspense>} /> : ""}
         </Route>
