@@ -48,7 +48,7 @@ const MapLocation = ( {token} ) => {
     }
 
   return (
-    <div className="container mx-auto my-3 p-1 shadow-lg rounded-lg">
+  <div className="container mx-auto my-3 p-8 shadow-lg rounded-lg">
     <div className="flex justify-between">
       <button
         onClick={showMyLocation}
