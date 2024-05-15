@@ -5,7 +5,7 @@ import { RiHistoryFill } from "react-icons/ri";
 import { BiMapPin } from "react-icons/bi";
 import { useState } from "react";
 import {FaTimes} from "react-icons/fa"
-import {CiMenuFries} from "react-icons/ci"
+import {TiThMenu} from "react-icons/ti"
 
 const Sidebar = () => {
 
@@ -26,20 +26,20 @@ const Sidebar = () => {
        
   </div>
 
-  <ul className="bg-gray-100 shadow-sm shadow-gray-400 rounded-xl m-2 h-screen pt-2 text-white">
-          <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded transition duration-300 border-slate-900">
-            <BiMapPin className="mr-1" size={20} />
-            <Link to="/map-location">Map Location</Link>
-          </li>
-          <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded transition duration-300 border-slate-900">
-            <RiHistoryFill className="mr-1" size={20} />
-            <Link to="/location-history">Location History</Link>
-          </li>
-          <li className="flex items-center mb-3 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded transition duration-300 border-slate-900">
-            <CgProfile className="mr-1" size={20} />
-            <Link to="/profile">Profile</Link>
-          </li>
-        </ul>
+    <ul className="bg-gray-100 shadow-sm shadow-gray-400 rounded-xl m-2 h-screen pt-2 text-white">
+      <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded transition duration-300 ">
+        <BiMapPin className="mr-1" size={20} />
+        <Link to="/map-location">Map Location</Link>
+      </li>
+      <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded transition duration-300 ">
+        <RiHistoryFill className="mr-1" size={20} />
+        <Link to="/location-history">Location History</Link>
+      </li>
+      <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded transition duration-300 ">
+        <CgProfile className="mr-1" size={20} />
+        <Link to="/profile">Profile</Link>
+      </li>
+    </ul>
   </div>
     
   </>
@@ -51,7 +51,7 @@ const Sidebar = () => {
       </div>
 
       <button className="absolute sm:hidden transition top-3 left-4" onClick={handleClick}>
-        {click ? <FaTimes/> : <CiMenuFries/> }
+        {click ? <FaTimes/> : <TiThMenu/> }
       </button>
   <div className="h-screen w-72 p-2 pt-6">
     <nav className="">

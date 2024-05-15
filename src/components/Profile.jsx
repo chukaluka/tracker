@@ -116,7 +116,7 @@ const Profile = () => {
             <div className="mt-6 flex justify-center">
               <button
                 type="submit"
-                className="bg-primary shadow-sm shadow-green-700 text-black py-2 px-4 rounded-md hover:bg-green-600 transition duration-300 border-2 border-gray-300"
+                className="bg-primary shadow-sm shadow-green-700 text-black py-2 px-4 rounded-md hover:bg-green-700 transition duration-300 border-2 border-gray-300"
               >
                 Save Changes
               </button>
