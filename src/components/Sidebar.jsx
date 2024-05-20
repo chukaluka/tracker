@@ -17,14 +17,14 @@ const Sidebar = () => {
 
   const content = <>
   <div className="lg:hidden md:hidden mt-11">
-  <div className="items-center mb-4 ml-7 lg:flex md:flex lg:flex-1 flex justify-center">
-        <SlLocationPin
-          className="mr-10"
-          size={28}
-          style={{ color: "#7009b5" }}
-        />
-       
-  </div>
+    <div className="items-center mb-4 ml-7 lg:flex md:flex lg:flex-1 flex justify-center">
+          <SlLocationPin
+            className="mr-10"
+            size={28}
+            style={{ color: "#7009b5" }}
+          />
+        
+    </div>
 
     <ul className="bg-gray-100 shadow-sm shadow-gray-400 rounded-xl m-2 h-screen pt-2 text-white">
       <li className="flex items-center mb-1 hover:bg-purple-800 hover:text-white text-black p-1 m-2 rounded transition duration-300 ">
@@ -53,7 +53,7 @@ const Sidebar = () => {
       <button className="absolute sm:hidden transition top-3 left-4" onClick={handleClick}>
         {click ? <FaTimes/> : <TiThMenu/> }
       </button>
-  <div className="h-screen w-72 p-2 pt-6">
+  <div className="h-screen w-96 p-2 pt-6">
     <nav className="">
       <div className="items-center mb-4 ml-7 lg:flex md:flex lg:flex-1 hidden">
         <SlLocationPin
