@@ -53,7 +53,7 @@ const Sidebar = () => {
       <button className="absolute sm:hidden transition top-3 left-4" onClick={handleClick}>
         {click ? <FaTimes/> : <TiThMenu/> }
       </button>
-  <div className="h-screen w-96 p-2 pt-6">
+  <div className="h-screen w-72 p-2 pt-6">
     <nav className="">
       <div className="items-center mb-4 ml-7 lg:flex md:flex lg:flex-1 hidden">
         <SlLocationPin
