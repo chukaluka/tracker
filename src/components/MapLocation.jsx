@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -46,6 +46,12 @@ const MapLocation = ( {token} ) => {
       sessionStorage.removeItem('token')
       navigate('/')
     }
+
+    //always scroll to the top
+    useEffect(() => {
+      window.scroll(0, 0);
+    }, [])
+    
 
   return (
   <div className="container mx-auto my-3 p-1 shadow-lg rounded-lg">
